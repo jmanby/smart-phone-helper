@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>SmartPhone Helper</title>
+    </head>
+    <body onload="onLoad();">
+        <div class="app">
+            <div class="bluetoothPage">
+                <h1>Please enable Bluetooth!</h1>
+				<button id="btRefreshButton">Refresh</button>
+            </div>
+			<div class="connectPage">
+				<h1 id="connection_message">Searching for device...</h1>
+				<button id="connectRefreshButton">Refresh</button>
+				<!-- DEBUG Buttons - Remove these before deployment of app-->
+				<table class="debugMenu">
+					<tr>
+						<td>
+							<h3>Debug: Buttons to simulate Bluetooth scanning / connection</h3>
+							<button onClick='javascript:app.connection.listAsConnected();'>Connect</button>
+							<button onClick='javascript:app.connection.foundDevice(true);'>Found = true</button>
+							<button onClick='javascript:app.connection.foundDevice(false);'>Found = false</button>
+							<button onClick='javascript:app.connection.toggleScanning();'>Toggle Scan</button>
+							<button onClick='javascript:alert("Con: "+app.connection.get("connected")+",found: "+app.connection.get("found")+",scan: "+app.connection.get("scanning"));'>Alert</button>
+						</td>
+					</tr>
+				</table>
+				<!-- END DEBUG Buttons -->
+			</div>
+            <div class="mainPage">
+                <table class="mainMenu">
+					<tr>
+						<td id="cell_0">
+							<img src="images/callSon.jpeg" alt="Call son">
+						</td>
+						<td id="cell_1">
+							<img src="images/textSon.png" alt="Text son">
+						</td>
+						<td id="cell_2">
+							<img src="images/callTaxi.png" alt="Call Taxi">
+						</td>
+					</tr>
+					<tr>
+						<td id="cell_3">
+							<img src="images/callDoctor.png" alt="Call Dr Laber">
+						</td>
+						<td id="cell_4">
+							<img src="images/callPharmacy.png" alt="Call Walgreen's">
+						</td>
+						<td id="cell_5">
+							<img src="images/callGrocery.jpg" alt="Call Kroger">
+						</td>
+					</tr>
+				</table>
+				<!-- DEBUG Buttons - Remove these before deployment of app-->
+				<table class="debugMenu">
+					<tr>
+						<td>
+							<h3>Debug: Buttons to simulate data received from device while connected.</h3>
+							<button onClick='javascript:testDataReception("A");'>A</button>
+							<button onClick='javascript:testDataReception("B");'>B</button>
+							<button onClick='javascript:testDataReception("C");'>C</button>
+							<button onClick='javascript:testDataReception("D");'>D</button>
+							<button onClick='javascript:testDataReception("E");'>E</button>
+							<button onClick='javascript:testDataReception("F");'>F</button>
+							<br />
+							<button onClick='javascript:testDataReception("X");'>Cancel</button>
+							<button onClick='javascript:testDataReception("W");'>Wake</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h3>Debug: Buttons to simulate Bluetooth scanning / connection</h3>
+							<button onClick='javascript:app.connection.listAsDisconnected();'>Disconnect</button>
+							<button onClick='javascript:app.connection.foundDevice(true);'>Found = true</button>
+							<button onClick='javascript:app.connection.foundDevice(false);'>Found = false</button>
+							<button onClick='javascript:app.connection.toggleScanning();'>Toggle Scan</button>
+							<button onClick='javascript:alert("Con: "+app.connection.get("connected")+",found: "+app.connection.get("found")+",scan: "+app.connection.get("scanning"));'>Alert</button>
+						</td>
+					</tr>
+				</table>
+				<!-- END DEBUG Buttons -->
+            </div>            
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/lib/underscore.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.js"></script>
+		<script type="text/javascript" src="js/lib/backbone.js"></script>
+		<script type="text/javascript" src="js/lib/backbone_localStorage.js"></script>
+        <script type="text/javascript" src="js/models/BluetoothEnabled.js"></script>
+		<script type="text/javascript" src="js/models/DeviceButton.js"></script>
+		<script type="text/javascript" src="js/models/DeviceConnection.js"></script>
+		<script type="text/javascript" src="js/collections/DeviceButtons.js"></script>
+		<script type="text/javascript" src="js/views/ConnectionView.js"></script>
+		<script type="text/javascript" src="js/views/MenuItemView.js"></script>
+		<script type="text/javascript" src="js/views/AppView.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript">
+           
+        </script>
+    </body>
+</html>
