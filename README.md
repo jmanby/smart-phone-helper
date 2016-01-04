@@ -27,6 +27,7 @@ $ cordova plugin add https://github.com/Rohfosho/CordovaCallNumberPlugin.git
 ```
 
 Next, delete the www directory that is automatically created:
+
 *Windows*
 ```
 $ rd /s /q ./www
