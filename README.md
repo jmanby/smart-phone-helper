@@ -19,37 +19,31 @@ Third, add the dependant plugins for the mobile app:
 ```
 $ cordova plugin add cordova-plugin-ble-central
 $ cordova plugin add cordova-plugin-file
-$ cordova plugin add cordova-plugin-inappbrowser
 $ cordova plugin add cordova-plugin-media
 $ cordova plugin add cordova-plugin-whitelist
 $ cordova plugin add https://github.com/katzer/cordova-plugin-email-composer.git
 $ cordova plugin add https://github.com/Rohfosho/CordovaCallNumberPlugin.git
 ```
 
-Next, delete the www directory that is automatically created:
-
-*Windows*
-```
-$ rd /s /q ./www
-```
-*Unix*
+Next, delete the www directory and config.xml that is automatically created, and get the correct files from the git repository:
 ```
 $ rm -rf ./www
+$ rm ./config.xml
+$ git init
+$ git remote add origin https://github.com/jmanby/smart-phone-helper
+$ git fetch
+$ git reset origin/master
+$ git checkout www .gitignore README.md
 ```
-
 
 To load the final version of the code that was used on Design Day at NCSU:
 ```
-$ git clone https://github.com/jmanby/smart-phone-helper/www
 $ git checkout design_day
-$ git fetch design_day
 ```
 
 To load the most recent version of the code (not tested with device, but tested in browser and mobile app with device input simulated)
 ```
-$ git clone https://github.com/jmanby/smart-phone-helper/www
 $ git checkout master
-$ git fetch master
 ```
 
 Finally, connect the smartphone and install the app:
