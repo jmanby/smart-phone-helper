@@ -10,7 +10,7 @@ $ cordova create smarthelp
 $ cd smarthelp
 ```
 
-Second, add the platform for the smartphone that the mobile app will be run on:
+Second, add the platform(s) for the smartphone that the mobile app will be run on:
 ```
 $ cordova platform add android
 ```
@@ -27,13 +27,13 @@ $ cordova plugin add https://github.com/Rohfosho/CordovaCallNumberPlugin.git
 
 Next, delete the www directory and config.xml that is automatically created, and get the correct files from the git repository:
 ```
-$ rm -rf ./www
+$ rm ./www
 $ rm ./config.xml
 $ git init
 $ git remote add origin https://github.com/jmanby/smart-phone-helper
 $ git fetch
 $ git reset origin/master
-$ git checkout www .gitignore README.md
+$ git checkout www config.xml .gitignore README.md
 ```
 
 To load the final version of the code that was used on Design Day at NCSU:
@@ -49,6 +49,11 @@ $ git checkout master
 Finally, connect the smartphone and install the app:
 ```
 $ cordova run android --device
+```
+
+Alternatively, create a final release version of the app (note filepath that is displayed upon successful completion of the build command):
+```
+$ cordova build android --release
 ```
 
 ## Platforms
